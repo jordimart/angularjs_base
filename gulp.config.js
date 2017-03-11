@@ -7,7 +7,9 @@ module.exports = function() {
   var specRunnerFile = 'specs.html';
   var temp = './.tmp/';
   var wiredep = require('wiredep');
-  var bowerFiles = wiredep({ devDependencies: true })['js'];
+  var bowerFiles = wiredep({
+    devDependencies: true
+  })['js'];
   var bower = {
     json: require('./bower.json'),
     directory: './bower_components/',
@@ -26,7 +28,7 @@ module.exports = function() {
     ],
     build: './build/',
     client: client,
-    css: temp + 'styles.css',
+    css: temp + '*.css',
     fonts: bower.directory + 'font-awesome/fonts/**/*.*',
     html: client + '**/*.html',
     htmltemplates: clientApp + '**/*.html',
@@ -43,7 +45,7 @@ module.exports = function() {
       '**/*.module.js',
       '**/*.js'
     ],
-    less: client + 'styles/styles.less',
+    sass: client + 'styles/**/*.scss',
     report: report,
     root: root,
     server: server,
@@ -65,7 +67,9 @@ module.exports = function() {
     /**
      * plato
      */
-    plato: { js: clientApp + '**/*.js' },
+    plato: {
+      js: clientApp + '**/*.js'
+    },
 
     /**
      * browser sync
@@ -116,7 +120,9 @@ module.exports = function() {
     ],
     specHelpers: [client + 'test-helpers/*.js'],
     specs: [clientApp + '**/*.spec.js'],
-    serverIntegrationSpecs: [client + '/tests/server-integration/**/*.spec.js'],
+    serverIntegrationSpecs: [client +
+      '/tests/server-integration/**/*.spec.js'
+    ],
 
     /**
      * Node settings
@@ -161,9 +167,15 @@ module.exports = function() {
         dir: report + 'coverage',
         reporters: [
           // reporters not supporting the `file` property
-          { type: 'html', subdir: 'report-html' },
-          { type: 'lcov', subdir: 'report-lcov' },
-          { type: 'text-summary' } //, subdir: '.', file: 'text-summary.txt'}
+          {
+            type: 'html',
+            subdir: 'report-html'
+          }, {
+            type: 'lcov',
+            subdir: 'report-lcov'
+          }, {
+            type: 'text-summary'
+          } //, subdir: '.', file: 'text-summary.txt'}
         ]
       },
       preprocessors: {}
