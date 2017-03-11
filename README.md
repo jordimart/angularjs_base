@@ -1,6 +1,6 @@
 ## Scaffolding básico para empezar una aplicación utilizando Angular,nodejs y Saas.
 
-![Foo](https://commons.wikimedia.org/wiki/File:AngularJS_logo.svg)
+![Foo](https://upload.wikimedia.org/wikipedia/commons/c/ca/AngularJS_logo.svg)
 
 ###John Papa's Style Guide
 
