@@ -1,6 +1,6 @@
 ## Scaffolding básico para empezar una aplicación utilizando Angular,nodejs y Saas.
 
-![alt text](https://commons.wikimedia.org/wiki/File:AngularJS_logo.svg)
+[![alt text](https://commons.wikimedia.org/wiki/File:AngularJS_logo.svg)]
 
 ###John Papa's Style Guide
 For the first time we have structured our project with the [John Papa's Style Guide](https://github.com/johnpapa/angular-styleguide/tree/master/a1). It's an interesting way of working in AngularJs. We recommend you to learn more about *John Papa*.
