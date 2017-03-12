@@ -1,20 +1,21 @@
 (function() {
-  'use strict';
+    'use strict';
 
-  angular
-    .module('app.home')
-    .controller('HomeController', HomeController);
+    angular
+        .module('app.home')
+        .controller('HomeController', HomeController);
 
-  HomeController.$inject = ['logger'];
+    HomeController.$inject = ['logger'];
 
-  function HomeController(logger) {
-    var vm = this;
-    vm.title = 'Home';
+    function HomeController(logger) {
+        var vm = this;
+        vm.title = 'Home';
 
-    activate();
+        activate();
 
-    function activate() {
-      logger.info('Activated Home View');
+        function activate() {
+            logger.info('Activated Home View');
+            console.log('home');
+        }
     }
-  }
 })();
