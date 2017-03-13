@@ -15,6 +15,17 @@
                 <li ng-class="vm.isCurrent(r)" ng-repeat="r in vm.navRoutes">
                     <a ui-sref="{{r.name}}" ng-bind-html="r.settings.content"></a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="hidden-sm hidden-md">{{'LANGUAGE'|translate}}</span> <span class="glyphicon glyphicon-menu-down"></span>
+
+                    </a>
+                    <div class="dropdown-menu">
+                        <a ng-click="vm.setLang('en')" translate="ENGLISH">English</a>
+                        <a ng-click="vm.setLang('es')" translate="CASTELLANO">Castellano</a>
+                        <a ng-click="vm.setLang('ca')" translate="CATALA">Catala</a>
+                    </div>
+                </li>
             </ul>
 
         </div>

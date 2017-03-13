@@ -5,12 +5,14 @@
         .module('app.layout')
         .controller('NavbarController', NavbarController);
 
-    NavbarController.$inject = ['$state', 'routerHelper'];
+    NavbarController.$inject = ['$state', 'routerHelper', '$translate', '$translatePartialLoader'];
     /* @ngInject */
-    function NavbarController($state, routerHelper) {
+    function NavbarController($state, routerHelper, $translate, $translatePartialLoader) {
         var vm = this;
+        $translatePartialLoader.addPart('layout');
         var states = routerHelper.getStates();
         vm.isCurrent = isCurrent;
+        vm.setLang = setLang;
 
         activate();
 
@@ -22,6 +24,11 @@
             }).sort(function(r1, r2) {
                 return r1.settings.nav - r2.settings.nav;
             });
+        }
+
+        function setLang(langKey) {
+            // You can change the language during runtime
+            $translate.use(langKey);
         }
 
         function isCurrent(route) {

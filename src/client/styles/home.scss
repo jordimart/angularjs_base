@@ -1,5 +1,27 @@
+@import "var";
 #home {
     background: url(../images/web-design.jpg) no-repeat;
     background-size: cover;
-    min-height: 630px;
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 100vh;
+    .text-vertical-center {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        text-align: center;
+        color: $secundary;
+    }
+    h1 {
+        background-color: white;
+        border: 1px solid black;
+        margin: auto;
+        width: 30%;
+        padding: 10px;
+        border-radius: 66px 66px 66px 66px;
+        -moz-border-radius: 66px 66px 66px 66px;
+        -webkit-border-radius: 66px 66px 66px 66px;
+        border: 0px solid #000000;
+    }
 }

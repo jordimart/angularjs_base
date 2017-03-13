@@ -22,11 +22,32 @@
     core.config(configure);
 
     configure.$inject = ['$logProvider', 'routerHelperProvider',
-        'exceptionHandlerProvider'
+        'exceptionHandlerProvider', '$translatePartialLoaderProvider', '$translateProvider'
     ];
     /* @ngInject */
     function configure($logProvider, routerHelperProvider,
-        exceptionHandlerProvider) {
+        exceptionHandlerProvider, $translatePartialLoaderProvider, $translateProvider) {
+
+        $translateProvider.registerAvailableLanguageKeys(['es', 'ca', 'en'], {
+            'ca-ES': 'ca',
+            'en-US': 'en',
+            'en-UK': 'en',
+            'es-ES': 'es'
+        });
+
+        $translatePartialLoaderProvider.addPart('core');
+        $translateProvider.useLoader('$translatePartialLoader', {
+            urlTemplate: '/i18n/{part}/{lang}.json',
+            loadFailureHandler: 'MyErrorHandler'
+        });
+        $translateProvider.useCookieStorage();
+
+        $translateProvider
+            .determinePreferredLanguage()
+            .fallbackLanguage('en')
+            .useSanitizeValueStrategy(null);
+
+
         if ($logProvider.debugEnabled) {
             $logProvider.debugEnabled(true);
         }
